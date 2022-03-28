@@ -20,6 +20,14 @@ namespace TEMPLATE.WEB.Controllers
 
 		public IActionResult Index()
 		{
+			try
+			{
+				throw new ArgumentNullException("TEST NA NULL EXC");
+			}
+			catch (Exception e)
+			{
+				_logger.LogError(e, "Test Error");
+			}
 			return View();
 		}
 
